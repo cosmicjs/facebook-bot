@@ -1,0 +1,23 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "foward": "lt --port 3000 --subdomain noahsmessengerbot",
+    "start": "node index.js"
+  },
+  "author": "Noah Vaillancourt",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootbot": "^1.0.12",
+    "chrono-node": "^1.3.1",
+    "config": "^1.26.1",
+    "cosmicjs": "^2.39.0",
+    "dotenv": "^4.0.0",
+    "node-schedule": "^1.2.1",
+    "request": "^2.81.0"
+  }
+}
