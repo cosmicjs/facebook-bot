@@ -24,7 +24,14 @@ VERIFY_TOKEN='DogLover49'
 ```
 We will fill in APP_SECRET and ACCESS_TOKEN later but for now make sure that you have something in the VERIFY_TOKEN field. It can be anything at all. For the sake of this example I used DogLover49.
 
-### Local Tunnel
+### Starting Your Application
+Now your going to need to start your application for the next part to work.
+Open two seperate terminal windows inside of your application root folder.
+```sh
+npm run start
+```
+Run this first and keep it running. Now in the next terminal window we will install and setup local tunnel.
+
 Local Tunnel is a nice little utility that takes a port you specify and routes it to the outside world by giving it a secure web address. We'll just have to install it real quick.
 ```sh
 sudo apt-get install localtunnel
@@ -37,7 +44,7 @@ It should return this.
 ```sh
 your url is: https://<domainpick>.localtunnel.me
 ```
-This starts a tunnel that gives your machine a url for facebook to look for. You need to run this after you started your application using 'npm run start' once it is all started you just keep it running so it continues to foward your local ip. 
+This starts a tunnel that gives your machine a url for facebook to look for. Whenever you start the application make sure that you start it before you initiate local tunnel or else it won't find the port and return errors.
 
 ### Facebook Dev Panel Time
 First thing you need to do is create a new application. Go to the [Facebook Developer Panel ](https://developers.facebook.com/apps/) and create a new app. Once your inside under 'Add Product' find the Messenger section and click on 'get started'.
