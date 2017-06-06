@@ -152,4 +152,4 @@ eventEmitter.on('new', function(itemSlug, time) {
   })
 })
 
-bot.start()
+bot.start(80)
