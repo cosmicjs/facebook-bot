@@ -152,4 +152,4 @@ eventEmitter.on('new', function(itemSlug, time) {
   })
 })
 
-bot.start(80)
+bot.start(process.env.PORT)
