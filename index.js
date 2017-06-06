@@ -134,8 +134,11 @@ bot.hear('create', (payload, chat) => {
   })
 })
 
-bot.hear('active', (payload, chat) => {
-  chat.say('finding all of your ongoing reminders.')
+bot.hear('help', (payload, chat) => {
+  chat.say('Here are the following commands for use.')
+  chat.say("'create': add a new reminder")
+  chat.say("'setup': add your bucket info such as slug and write key")
+  chat.say("'config': lists your current bucket config")
 })
 
 eventEmitter.on('new', function(itemSlug, time) {
