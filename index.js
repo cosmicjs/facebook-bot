@@ -27,6 +27,7 @@ app.get('/webhook/', function(req, res) {
   if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN){
     res.send(req.query['hub.challenge'])
     const newtoken = hub.challenge
+    console.log("Application verified!")
   }
   res.send('wrong token')
 })
