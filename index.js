@@ -26,8 +26,8 @@ app.get('/', function(req, res) {
 app.get('/webhook/', function(req, res) {
   if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN){
     res.send(req.query['hub.challenge'])
+    console.log(hub.challenge)
     const newtoken = hub.challenge
-    console.log("Application verified!")
   }
   res.send('wrong token')
 })
@@ -55,21 +55,21 @@ bot.setGetStartedButton((payload, chat) => {
 
 bot.hear('setup', (payload, chat) => {
   const getBucketSlug = (convo) => {
-    convo.ask("What's your buckets slug?", (payload, convo) => {
+    convo.ask("What's your Bucket's slug?", (payload, convo) => {
       var slug = payload.message.text;
       convo.set('slug', slug)
       convo.say("setting slug as "+slug).then(() => getBucketReadKey(convo));
     })
   }
   const getBucketReadKey = (convo) => {
-    convo.ask("What's your buckets read key?", (payload, convo) => {
+    convo.ask("What's your Bucket's read key?", (payload, convo) => {
       var readkey = payload.message.text;
       convo.set('read_key', readkey)
       convo.say('setting read_key as '+readkey).then(() => getBucketWriteKey(convo))
     })
   }
   const getBucketWriteKey = (convo) => {
-    convo.ask("What's your buckets write key?", (payload, convo) => {
+    convo.ask("What's your Bucket's write key?", (payload, convo) => {
       var writekey = payload.message.text
       convo.set('write_key', writekey)
       convo.say('setting write_key as '+writekey).then(() => finishing(convo))
@@ -97,7 +97,7 @@ bot.hear(['hello', 'hey', 'sup'], (payload, chat)=>{
   })
 })
 
-bot.hear('config', (payloadc, hat) => {
+bot.hear('config', (payload, chat) => {
   if(JSON.stringify(config.bucket) === undefined){
     chat.say("No config found :/ Be sure to run 'setup' to add your bucket details")
   }
