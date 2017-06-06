@@ -15,7 +15,7 @@ const reminders = []
 
 const eventEmitter = new EventEmitter()
 
-app.set('port', (process.env.PORT || 3000))
+app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
@@ -152,4 +152,4 @@ eventEmitter.on('new', function(itemSlug, time) {
   })
 })
 
-bot.start(process.env.PORT)
+bot.start()
