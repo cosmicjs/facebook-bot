@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "foward": "lt --port 3000 --subdomain noahsmessengerbot",
+    "forward": "lt --port 3000 --subdomain noahsmessengerbot",
     "start": "node index.js"
   },
   "author": "Noah Vaillancourt",
